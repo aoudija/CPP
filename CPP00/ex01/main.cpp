@@ -26,61 +26,84 @@ int	all_digits(std::string str)
 	return (1);
 }
 
+void	opt_names(std::string line){
+	while (1)
+	{
+		std::cout << "try again: ";
+		std::getline(std::cin,line);
+		if (std::cin.eof())
+			break ;
+		if (all_alpha(line))
+			break ;
+	}
+}
+
+void	opt_nck_secret(std::string line){
+	while (1)
+	{
+		std::cout << "try again: ";
+		std::getline(std::cin,line);
+		if (std::cin.eof())
+			break ;
+		if (!line.empty() && isalnum(line[0]))
+			break ;
+	}
+}
+
 void	ADD(Contact *c, std::string line)
 {
 	//first_n
 	std::cout << "first_name: ";
 	std::getline(std::cin, line);
+	if (std::cin.eof())
+		exit(0) ;
 	if (!all_alpha(line))
 	{
 		std::cout << "only alphabets, \n";
-		while (1)
-		{
-			std::cout << "try again: ";
-			std::getline(std::cin,line);
-			if (all_alpha(line))
-				break ;
-		}
+		opt_names(line);
 	}
 	c->sf_name(line);
+	
 	//last_n
+
 	std::cout << "last_name: ";
 	std::getline(std::cin, line);
+	if (std::cin.eof())
+		exit(0) ;
 	if (!all_alpha(line))
 	{
 		std::cout << "only alphabets, \n";
-		while (1)
-		{
-			std::cout << "try again: ";
-			std::getline(std::cin,line);
-			if (all_alpha(line))
-				break ;
-		}
+		opt_names(line);
 	}
 	c->sl_name(line);
+
 	//nick_n
+	
 	std::cout << "nick_name: ";
 	std::getline(std::cin, line);
+	if (std::cin.eof())
+		exit(0) ;
 	if (line.empty() || !isalnum(line[0]))
 	{
 		std::cout << "enter numbers/alphabets\n";
-		while (1){
-			std::cout << "try again: ";
-			std::getline(std::cin,line);
-			if (!line.empty() && isalnum(line[0]))
-				break ;
-		}
+		opt_nck_secret(line);
 	}
 	c->snick_name(line);
+	
 	//phone_num
+
 	std::cout << "Phone_number: ";
 	std::getline(std::cin, line);
+	if (std::cin.eof())
+		exit(0) ;
 	if (!all_digits(line))
 	{
 		std::cout << "write digits, ";
 		while (1){
 			std::cout << "try again: ";
 			std::getline(std::cin,line);
+			if (std::cin.eof())
+				break ;
 			if (all_digits(line))
 				break ;
 		}
@@ -92,12 +115,7 @@ void	ADD(Contact *c, std::string line)
 	if (line.empty() || !isalnum(line[0]))
 	{
 		std::cout << "enter numbers/alphabets\n";
-		while (1){
-			std::cout << "try again: ";
-			std::getline(std::cin,line);
-			if (!line.empty() && isalnum(line[0]))
-				break ;
-		}
+		opt_nck_secret(line);
 	}
 	c->ssecret(line);
 }

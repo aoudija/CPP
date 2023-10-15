@@ -34,11 +34,11 @@ void	printer(std::string str){
 
 void	columns()
 {
-	std::cout << "index     |";
-	std::cout << "first_name|";
-	std::cout << "last_name |";
-	std::cout << "nick_name |\n";
-	std::cout << "-------------------------------------------\n";
+	std::cout << std::left << std::setw(10) << "index" << '|';
+	std::cout << std::left << std::setw(10) << "first_name" << '|';
+	std::cout << std::left << std::setw(10) << "last_name" << '|';
+	std::cout << std::left << std::setw(10) << "nick_name" << "|\n";
+	std::cout << std::left << std::setw(10) << "-------------------------------------------\n";
 }
 //getter
 void	PhoneBook::show_phonebook(){
@@ -60,7 +60,7 @@ void	PhoneBook::show_phonebook(){
 		if (line.length() != 1 || !isdigit(line[0])){
 			std::cout << "wrong index\n";}
 		else{
-			int n = std::stoi(line);
+			int n = std::atoi(line.c_str());
 			if (n <= 7 && n >=0)
 			{
 				if (n < i)
@@ -79,5 +79,4 @@ void	PhoneBook::show_phonebook(){
 				std::cout << "not in range , try (0 -> 7)\n";
 		}
 	}
-		std::cout << std::setw(2) << "abrakadabra\n";
 }

@@ -5,7 +5,7 @@
 
 class PhoneBook
 {
-	Contact	c[8];
+	// Contact	c[8];
 	int		num;
 	public:
 		void	set_phonebook(Contact ct[8]);
