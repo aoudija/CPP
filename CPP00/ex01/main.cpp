@@ -89,9 +89,7 @@ void	ADD(Contact *c, std::string line)
 		opt_nck_secret(line);
 	}
 	c->snick_name(line);
-	
 	//phone_num
-
 	std::cout << "Phone_number: ";
 	std::getline(std::cin, line);
 	if (std::cin.eof())
