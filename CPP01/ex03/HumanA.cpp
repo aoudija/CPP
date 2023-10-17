@@ -1,6 +1,6 @@
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon &w):w(w){
+HumanA::HumanA(std::string name, Weapon& w):w(w){
     this->name = name;
 }
 

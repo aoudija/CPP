@@ -4,7 +4,7 @@
 #include "Weapon.hpp"
 
 class	HumanA{
-	Weapon		&w;
+	Weapon		w;
 	std::string	name;
 	public:
 		HumanA(std::string name, Weapon &w);
