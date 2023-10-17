@@ -1,9 +1,5 @@
 #include "Zombie.hpp"
 
-// Zombie::Zombie(){
-// 	this->name = "Amine";
-// }
-
 void	Zombie::set_name(std::string name){
 	this->name = name;
 }
