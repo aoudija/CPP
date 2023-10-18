@@ -27,5 +27,8 @@ int main(int ac, char **av){
 			Rfile << data;
 			Rfile.close();
 		}
+		std::string test = "amine";
+		find = test.find("z");
+		std::cout << find;
 	}
 }
