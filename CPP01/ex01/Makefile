@@ -4,7 +4,7 @@ CPP = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-FILES = main.cpp newZombie.cpp randomchump.cpp Zombie.cpp
+FILES = main.cpp newZombie.cpp zombieHorde.cpp Zombie.cpp
 
 all :
 	$(CPP) $(FLAGS) $(FILES) -o $(NAME)
