@@ -17,15 +17,6 @@ void	Harl::error(void){
 }
 
 void	Harl::complain(std::string level){
-	std::string tab[] = {"debug", "info", "warning", "error"};
-	void	(Harl::*pf[])() = {&Harl::debug, &Harl::info, &Harl::warning
-		, &Harl::error};
-	int i;
-	for (i = 0;i < 4;i++){
-		if (tab[i] == level){
-			(this->*pf[i])();
-			break ;
-		}
-	}
+	
 }
 
