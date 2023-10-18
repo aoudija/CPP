@@ -3,41 +3,29 @@
 #include <fstream>
 
 int main(int ac, char **av){
-    if (ac == 4){
-		std::string fn = av[1];
-        std::string s1(av[2]);
-        std::string s2(av[3]);
-        std::ifstream infile(fn);
-        std::string line, concat;
-		std::getline(infile, line);
-        if (infile.is_open()){
-			while(1){
-				concat += line + '\n';
-				if (!std::getline(infile, line))
-					break;
+	if (ac == 4){
+		std::string file_name = av[1], s1 = av[2],
+			s2 = av[3], data, concat;
+		std::ifstream main_file(file_name);
+		if (main_file.is_open()){
+			while (std::getline(main_file, concat))
+				{data += concat + '\n';}
+			main_file.close();
+		}
+		else
+			return (0);
+		size_t find;
+			find = data.find(s1);
+			while (find != std::string::npos){
+				data.erase(find, s2.length());
+				data.insert(find,s2);
+				std::cout << data;
+				find = data.find(s1);
 			}
-			infile.close();
-			int i,j,f;
-			i = j = 0;
-			while (concat[i]){
-				if (concat.find(s1,i) != concat.npos)
-				{
-					f = concat.find(s1,i);
-					j = 0;
-					while (j < (int)s2.length()){
-						concat[f] = s2[j];
-						j++;
-						f++;
-					}
-					i = f - 1;
-				}
-				i++;
-			}
-			std::ofstream outfile(fn + ".replace");
-			if (outfile.is_open()){
-				outfile << concat;
-				outfile.close();
-			}
-        }
-    }
+		std::ofstream Rfile(file_name + ".replace");
+		if (Rfile.is_open()){
+			Rfile << data;
+			Rfile.close();
+		}
+	}
 }
