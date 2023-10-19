@@ -19,16 +19,13 @@ int main(int ac, char **av){
 			while (find != std::string::npos){
 				data.erase(find, s2.length());
 				data.insert(find,s2);
-				std::cout << data;
-				find = data.find(s1);
+				find += s2.length();
+				find = data.find(s1, find);
 			}
 		std::ofstream Rfile(file_name + ".replace");
 		if (Rfile.is_open()){
 			Rfile << data;
 			Rfile.close();
 		}
-		std::string test = "amine";
-		find = test.find("z");
-		std::cout << find;
 	}
 }

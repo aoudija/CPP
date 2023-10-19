@@ -5,7 +5,7 @@ void	Harl::debug(void){
 }
 
 void	Harl::info(void){
-	std::cout << "I cannot believe adding extra bacon costs more money.You didn’t putenough bacon in my burger! If you did, I wouldn’t be asking for more!";
+	std::cout << "I cannot believe adding extra bacon costs more money.You didn’t put enough bacon in my burger! If you did, I wouldn’t be asking for more!";
 }
 
 void	Harl::warning(void){
@@ -17,6 +17,14 @@ void	Harl::error(void){
 }
 
 void	Harl::complain(std::string level){
-	
+	std::string strtab[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+	void (Harl::*table[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	int i = 0;
+	while (i < 4){
+		if (level == strtab[i]){
+			(this->*table[i])();
+		}
+		i++;
+	}
 }
 
