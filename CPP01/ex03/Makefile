@@ -8,13 +8,8 @@ FILES = main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 OBG = $(FILES:.c=.o)
 
-all : $(NAME)
-
-$(NAME) : $(OBG)
-	$(CPP) $(CFLAGS) $(OBG) -o $(NAME)
-
-%.o : %.c
-	$(CPP) $(CFLAGS) -c $<
+all:
+	$(CPP) $(FLAGS) $(FILES) -o $(NAME)
 
 fclean:
 	rm -f $(NAME)
