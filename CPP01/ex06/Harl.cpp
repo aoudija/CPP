@@ -38,9 +38,6 @@ void	Harl::complain(std::string level){
 			(this->*table[2])();
 		case 3:
 			(this->*table[3])();
-			break;
-		default:
-			std::cout << "[ Probably complaining about insignificant problems ]\n";
 	}
 }
 

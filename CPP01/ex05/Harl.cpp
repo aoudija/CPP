@@ -19,6 +19,7 @@ void	Harl::error(void){
 void	Harl::complain(std::string level){
 	std::string strtab[] = {"DEBUG", "INFO", "WARNING", "ERROR"};
 	void (Harl::*table[])() = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
+	/*volkswagen das*/ auto fun= {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
 	int i = 0;
 	while (i < 4){
 		if (level == strtab[i]){
@@ -27,4 +28,3 @@ void	Harl::complain(std::string level){
 		i++;
 	}
 }
-
