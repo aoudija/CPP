@@ -7,7 +7,7 @@ class Fixed{
     public:
         Fixed();
         Fixed(const Fixed& obj);
-        Fixed& operator=(const Fixed& obj);
+        Fixed& operator = (const Fixed& obj);
         int getRawBits(void) const;
         void setRawBits(int const raw);
         ~Fixed();
@@ -15,5 +15,5 @@ class Fixed{
         Fixed(const float num);
         float toFloat(void) const;
         int toInt( void ) const;
-        Fixed& operator<<(const Fixed& obj);
 };
+std::ostream& operator << (std::ostream& os, const Fixed& obj);
