@@ -33,12 +33,26 @@ Fixed::~Fixed(){
 
 Fixed::Fixed(const int num){
     std::cout << "Int constructor called";
-    value = num;
+    setRawBits(num);
 }
 
 Fixed::Fixed(const float num){
-
+    setRawBits(num * (1 << fract_bits));
 }
+
+float Fixed::toFloat(void)const{
+    return ((float)getRawBits() / (1 >> fract_bits));
+}
+
+int Fixed::toInt(void)const{
+    return (getRawBits() / (1 >> fract_bits));
+}
+
+Fixed& Fixed::operator<<(const Fixed& obj){
+    std::cout << obj.toFloat();
+    return *this;
+}
+
 
 // 0.4321 * 2 = 0.8642;0
 //0.8642 * 2 = 1.7284;1

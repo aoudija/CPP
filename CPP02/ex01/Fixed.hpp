@@ -14,5 +14,6 @@ class Fixed{
         Fixed(const int num);
         Fixed(const float num);
         float toFloat(void) const;
-        Fixed& operator<<(Fixed obj);
+        int toInt( void ) const;
+        Fixed& operator<<(const Fixed& obj);
 };
