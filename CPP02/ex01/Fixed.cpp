@@ -14,7 +14,7 @@ Fixed::Fixed(const Fixed& obj){
 
 int Fixed::getRawBits(void) const{
     std::cout << "getRawBits member function called" << std::endl;
-    return value;
+    return value ;
 }
 
 Fixed& Fixed::operator = (const Fixed& obj){
@@ -33,32 +33,24 @@ Fixed::~Fixed(){
 
 Fixed::Fixed(const int num){
     std::cout << "Int constructor called"<< std::endl;;
-    setRawBits(num);
+    setRawBits(roundf(num * 256));
 }
 
 Fixed::Fixed(const float num){
-    setRawBits(num * (1 >> fract_bits));
+    std::cout << "Float constructor called"<< std::endl;;
+    setRawBits(roundf(num * 256));
 }
 
 float Fixed::toFloat(void)const{
-    return ((float)value * (1 >> fract_bits));
+    return ((float)value / 256);
 }
 
 int Fixed::toInt(void)const{
-    return (value * (1 << fract_bits));
+    return (value / 256);
 }
 
 std::ostream& operator << (std::ostream& os, const Fixed& obj){
-    os << obj.toFloat();
+    os << ((float)obj.getRawBits() / 256);
     return os;
 }
 
-// 0.4321 * 2 = 0.8642;0
-//0.8642 * 2 = 1.7284;1
-//0.7284 * 2 = 1.4568;1
-//0.4568 * 2 = 0.9136;0
-//0.9136 * 2 = 1.8272;1
-//0.8272 * 2 = 1.6544;1
-//0.6544 * 2 = 1.3088;1
-//0.3088 * 2 = 0.6176;1
-//01101111 = 0.43359375
