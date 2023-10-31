@@ -17,6 +17,5 @@ class Point
         Fixed gety() const;
 };
 Fixed abs(Fixed i);
-Fixed distance(Point a, Point b);
 bool bsp( Point const a, Point const b,
     Point const c, Point const point);

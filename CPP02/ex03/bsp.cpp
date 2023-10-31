@@ -6,28 +6,9 @@ Fixed abs(Fixed i){
 	return i;
 }
 
-Fixed distance(Point a, Point b){
-	Fixed Distance(abs(a.getx() - b.getx())
-        + abs(a.gety() - b.gety()));
-    return Distance;
-}
-
 bool bsp( Point const a, Point const b, Point const c, Point const point){
     if (point == a || point == b || point == c)
         return false;
-    // std::cout << distance(Point(0,2), Point(7,-1)) << std::endl;
-    // Fixed AB, AC, BC, PA, PB, PC;
-    // Fixed Area, Area1, Area2, Area3;
-    // AB = distance(a,b);
-    // AC = distance(a,c);
-    // BC = distance(b,c);
-    // PA = distance(a,point);
-    // PB = distance(b,point);
-    // PC = distance(c,point);
-    // Fixed four(4), quarter(0.25f);
-    // Area = quarter * (four * (AB)*(AB) * (AC)*(AC)
-    //     - (AB*(AB) + AC*(AC) - BC*(BC)) * (AB*(AB) + AC*(AC) - BC*(BC)));
-    // std::cout << Area;
     // Area1 = quarter * (four * (PA)*(PA) * (PB)*(PB)
     //     - (PA*(PA) + PB*(PB) - AB*(AB)) * (PA*(PA) + PB*(PB) - AB*(AB)));
     // Area2 = quarter * (four * (PC)*(PC) * (PA)*(PA)
@@ -36,9 +17,29 @@ bool bsp( Point const a, Point const b, Point const c, Point const point){
     //     - (PB*(PB) + PC*(PC) - BC*(BC)) * (PB*(PB) + PC*(PC) - BC*(BC)));
     // if ((Area1 + Area2 + Area3) != Area)
     //     return false;
-    float Area;
-    Fixed xa = a.getx();
-    a.getx();
+    Fixed Area, Area1, Area2, Area3;
+    Fixed ax, bx, cx, ay, by, cy, px, py;
+    ax = a.getx();
+    bx = b.getx();
+    cx = c.getx();
+    ay = a.gety();
+    by = b.gety();
+    cy = c.gety();
+    px = point.getx();
+    py = point.gety();
+    Fixed half(0.5f);
+    Area = half * abs((ax * by + bx * cy + cx * ay)
+        - (ay * bx + by * cx + cy * ax));
+    // std::cout << Area << std::endl;
+    Area1 = half * abs((px * cy + cx * ay + ax * py)
+        - (py * cx + cy * ax + ay * px));
+    Area2 = half * abs((px * by + bx * cy + cx * py)
+        - (py * bx + by * cx + cy * px));
+    Area3 = half * abs((px * ay + ax * by + bx * py)
+        - (py * ax + ay * bx + by * px));
+    // std::cout << (Area1 + Area2) + (Area3) << std::endl;
+    if (Area != ((Area1 + Area2) + (Area3)))
+        return false;
     return true;
-    
 }
+//Area = 0.5 * |(x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2))|

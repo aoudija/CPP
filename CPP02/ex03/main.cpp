@@ -1,5 +1,10 @@
 #include "Point.hpp"
 
 int main(){
-    bsp(Point(1,1), Point(2,2), Point(1,3), Point(1.5f,2));
+    bool B = bsp(Point(-1,1), Point(2,1) 
+        ,Point(1,-2), Point(0,1));
+    if (B == 0)
+        std::cout << "point outside triangle" << std::endl;
+    else
+        std::cout << "point inside triangle" << std::endl;
 }

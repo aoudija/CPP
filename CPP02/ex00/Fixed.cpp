@@ -20,7 +20,7 @@ int Fixed::getRawBits(void) const{
 
 Fixed& Fixed::operator=(const Fixed& obj){
     std::cout << "Copy assignment operator called\n";
-    value = obj.getRawBits();
+    value = (float)obj.getRawBits();
     return *this;
 }
 

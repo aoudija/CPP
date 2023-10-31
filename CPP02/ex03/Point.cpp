@@ -23,9 +23,9 @@ bool Point::operator==(Point obj) const{
     return ((x == obj.x) && (y == obj.y));
 }
 
-Fixed Point::getx(){
+Fixed Point::getx() const{
 	return x;
 }
-Fixed Point::gety(){
+Fixed Point::gety() const{
 	return y;
 }

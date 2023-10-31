@@ -1,6 +1,6 @@
 #include <iostream>
 #include "Fixed.hpp"
-//floating point -> representation in memiory && fixed point -> all about it.
+
 int main( void ) {
 	Fixed a;
 	Fixed b( a );
@@ -79,3 +79,21 @@ int main( void ) {
 // 00000101 (5)  << 1 = 5 * 2^1 = 00001010 10
 // 00000101  /256   >> 8
 // 00000010 2
+
+
+
+
+// 76/2 = 38;   0
+// 38 / 2 = 19; 0
+// 19 / 2 = 9;  1
+// 9 / 2 = 4;   1
+// 4 / 2 = 2;   0
+// 2 / 2 = 1;   0
+// 1 / 2 = 0;   1 
+
+//0.2 * 2 = 0.4;0
+//0.4 * 2 = 0.8;0
+//0.8 * 2 = 1.6;1
+//0.6 * 2 = 1.2;1
+//0.2 * 2 = 0.4;0
+//if ((0.2+0.1)==0.3)
