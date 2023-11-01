@@ -1,7 +1,7 @@
 #include "Fixed.hpp"
 
 const int Fixed::fract_bits = 8;
-
+;
 Fixed::Fixed(){
     // std::cout << "Default constructor called"<< std::endl;
     value = 0;
@@ -115,7 +115,7 @@ Fixed Fixed::operator--(int){
 }
 
 Fixed& Fixed::min(Fixed& f1, Fixed& f2){
-	if(f1 >= f2)
+    if(f1 >= f2)
 		return f2;
 	return f1;
 }
