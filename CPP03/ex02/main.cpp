@@ -1,10 +1,9 @@
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
 int main(){
-	ScavTrap c("h");
+	FragTrap c("h");
 	c.attack("target");
 	c.takeDamage(2);
 	c.beRepaired(1);
-	c.guardGate();
+	c.highFivesGuys();
 }
-

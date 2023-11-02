@@ -17,9 +17,9 @@ int Fixed::getRawBits(void) const{
     return value ;
 }
 
-Fixed& Fixed::operator = (const Fixed& obj){
+const Fixed& Fixed::operator = (const Fixed& obj){
     // std::cout << "Copy assignment operator called"<< std::endl;
-    value = (float)obj.getRawBits();
+    value = obj.getRawBits();
     return *this;
 }
 
@@ -50,7 +50,7 @@ int Fixed::toInt(void)const{
 }
 
 std::ostream& operator << (std::ostream& os, const Fixed& obj){
-    os << ((float)(float)obj.getRawBits() / 256);
+    os << obj.toFloat();
     return os;
 }
 

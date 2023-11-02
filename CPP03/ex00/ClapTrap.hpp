@@ -2,9 +2,8 @@
 #include <string>
 
 class ClapTrap{
-	protected:
-    	std::string Name;
-		int	Hit_points, Energie_points, Attack_damage;
+    std::string Name;
+	int	Hit_points, Energie_points, Attack_damage;
 	public:
 		ClapTrap();
 		ClapTrap(std::string Name);

@@ -9,7 +9,7 @@ Fixed::Fixed(){
 
 Fixed::Fixed(const Fixed& obj){
     std::cout << "Copy constructor called\n";
-    *this = obj;
+    value = obj.value;
 }
 
 int Fixed::getRawBits(void) const{
