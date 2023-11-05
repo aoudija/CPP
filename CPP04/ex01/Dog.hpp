@@ -4,9 +4,10 @@
 #include <iostream>
 #include <string>
 #include "Animal.hpp"
-
+#include "Brain.hpp"
 
 class Dog:public Animal{
+    Brain*	br;
     public:
         Dog();
         Dog(Dog& dg);
@@ -14,6 +15,8 @@ class Dog:public Animal{
         const Dog& operator=(Dog& dg);
         std::string getType() const;
         void	makeSound() const;
+        void setbridea(std::string s, int i);
+        std::string getbridea(int i);
 };
 
 #endif

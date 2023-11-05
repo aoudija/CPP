@@ -1,10 +1,11 @@
-NAME = Sound
+NAME = Brain
 
 CPP = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-FILES = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongCat.cpp WrongAnimal.cpp
+FILES = main.cpp Animal.cpp Dog.cpp Cat.cpp WrongCat.cpp WrongAnimal.cpp \
+		Brain.cpp
 
 all :
 	$(CPP) $(FLAGS) $(FILES) -o $(NAME)
