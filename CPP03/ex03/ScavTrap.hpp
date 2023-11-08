@@ -1,3 +1,6 @@
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
+
 #include "ClapTrap.hpp"
 
 class ScavTrap:public virtual ClapTrap{
@@ -11,3 +14,4 @@ class ScavTrap:public virtual ClapTrap{
 		void	guardGate();
 };
 
+#endif

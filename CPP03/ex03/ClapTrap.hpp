@@ -1,3 +1,6 @@
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
+
 #include <iostream>
 #include <string>
 
@@ -17,6 +20,7 @@ class ClapTrap{
 
 };
 
+#endif
 /*
 Default constructor
 • Copy constructor

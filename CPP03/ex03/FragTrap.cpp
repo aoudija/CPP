@@ -44,6 +44,7 @@ void    FragTrap::attack(const std::string& target){
 		return ;
 	}
 	Hit_points -= 1;
+    Energie_points -= 1;
 	std::cout << "FragTrap " + Name + " attacks " + target;
 }
 

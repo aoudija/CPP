@@ -44,6 +44,7 @@ void    ScavTrap::attack(const std::string& target){
 		return ;
 	}
 	Hit_points -= 1;
+    Energie_points -= 1;
 	std::cout << "ScavTrap " + Name + " attacks " + target + "\n";
 }
 
