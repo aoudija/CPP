@@ -1,5 +1,4 @@
 #include "Cat.hpp"
-#include "WrongCat.hpp"
 
 void	l(){
 	system("leaks Brain");
@@ -7,18 +6,17 @@ void	l(){
 
 int main(){
 	// atexit(l);
-	// Animal* an[4];
-	// an[0] = new Cat();
-	// an[1] = new Cat();
-	// an[2] = new Dog();
-	// an[3] = new Dog();
-	// const Animal* j = new Dog();
-	// const Animal* i = new Cat();
-	// delete j;
-	// delete i;
-	// for (int i = 0; i < 4;i++){
-	// 	delete an[i];
-	// }
+	Animal* an[4];
+	an[0] = new Cat();
+	an[1] = new Cat();
+	an[2] = new Dog();
+	an[3] = new Dog();
+
+	an[0]->makeSound();
+	an[3]->makeSound();
+	for (int i = 0; i < 4;i++){
+		delete an[i];
+	}
 	const Animal* meta = new Animal();
     const Animal* j = new Dog();
     const Animal* i = new Cat();
@@ -30,6 +28,11 @@ int main(){
     delete i;
     delete j;
     delete meta;
+	// Cat c;
+	// Cat d;
+	// c.makeSound();
+	// d.makeSound();
+	// c = d;
 }
 
 

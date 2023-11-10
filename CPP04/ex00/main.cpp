@@ -6,6 +6,7 @@ void l(){
 }
 
 int main(){
+    // atexit (l);
     const Animal* meta = new Animal();
     const Animal* j = new Dog();
     const Animal* i = new Cat();
@@ -17,24 +18,13 @@ int main(){
     delete i;
     delete j;
     delete meta;
-    const WrongAnimal* Wmeta = new WrongAnimal();
-    const WrongAnimal* Wi = new WrongCat();
-    const WrongCat* WC = new WrongCat();
-    std::cout << Wi->getType() << " " << std::endl;
 
-    Wi->makeSound();
-    Wmeta->makeSound();
-    WC->makeSound();
-    delete Wi;
-    delete WC;
-    delete Wmeta;
-    const Animal* meta = new Animal();
-    const Animal* j = new Dog();
-    const Animal* i = new Cat();
-    i->makeSound();
-    j->makeSound();
-    meta->makeSound();
-    delete i;
-    delete j;
-    delete meta;
+    // const WrongAnimal* Wmeta = new WrongAnimal();
+    // const WrongAnimal* Wi = new WrongCat();
+	// std::cout << Wi->getType() << " " << std::endl;
+
+	// Wi->makeSound();
+	// Wmeta->makeSound();
+	// delete Wi;
+	// delete Wmeta;
 }

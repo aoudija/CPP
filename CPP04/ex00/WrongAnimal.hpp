@@ -5,14 +5,15 @@
 #include <string>
 
 class WrongAnimal{
-    protected:
-        std::string type;
-    public:
-        WrongAnimal();
-        WrongAnimal(WrongAnimal& an);
-        virtual ~WrongAnimal();
-        const WrongAnimal& operator=(WrongAnimal& an);
-        virtual std::string getType() const ;
-        void    makeSound() const ;
+	protected:
+		std::string type;
+	public:
+		WrongAnimal();
+		WrongAnimal(WrongAnimal& an);
+		~WrongAnimal();
+		const WrongAnimal& operator=(WrongAnimal& an);
+		std::string getType() const ;
+		void	makeSound() const ;
 };
+
 #endif

@@ -1,10 +1,11 @@
-NAME = Brain
+NAME = Interface
 
 CPP = c++
 
 FLAGS = -Wall -Wextra -Werror -std=c++98
 
-FILES = main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
+FILES = main.cpp AMateria.cpp Character.cpp Cure.cpp \
+		Ice.cpp MateriaSource.cpp \
 
 all :
 	$(CPP) $(FLAGS) $(FILES) -o $(NAME)

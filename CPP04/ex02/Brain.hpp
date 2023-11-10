@@ -16,4 +16,5 @@ class Brain{
         void    setidea(std::string s, int i);
 };
 
+
 #endif

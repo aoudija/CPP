@@ -1,6 +1,7 @@
 #include "WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal(){
+    type = "wrong animal";
     std::cout << "WrongAnimal Default constructor\n";
 }
 
@@ -20,6 +21,7 @@ const WrongAnimal& WrongAnimal::operator=(WrongAnimal& an){
 }
 
 std::string WrongAnimal::getType() const {
+    std::cout << "hey\n";
     return type;
 }
 
