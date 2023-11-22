@@ -12,8 +12,8 @@ class Bureaucrat;
 class Form{
 	const std::string name;
 	bool is_signed;
-	const int gradeS;
 	const int gradeE;
+	const int gradeS;
 	public:
 		Form();
 		Form(std::string n, int gs, int ge);
@@ -21,10 +21,10 @@ class Form{
 		const Form& operator=(const Form& fr);
 		~Form();
 		class GradeTooHighException:public std::exception{
-			const char* what() const _NOEXCEPT;
+			const char* what() const throw();
 		};
 		class GradeTooLowException:public std::exception{
-			const char* what() const _NOEXCEPT;
+			const char* what() const throw();
 		};
 		std::string	get_formname() const;
 		bool	get_sign() const;

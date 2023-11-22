@@ -1,10 +1,10 @@
  #include "Form.hpp"
 
-Form::Form():name("F"),gradeS(10),gradeE(20){
+Form::Form():name("F"),gradeE(20),gradeS(10){
     is_signed = 0;
 }
 
-Form::Form(std::string n, int gs, int ge):name(n),gradeS(gs),gradeE(ge){
+Form::Form(std::string n, int gs, int ge):name(n),gradeE(ge),gradeS(gs){
     is_signed = 0;
 }
 
@@ -12,11 +12,11 @@ Form::~Form(){
 }
 
 
-const char * Form::GradeTooHighException::what() const _NOEXCEPT{
+const char * Form::GradeTooHighException::what() const throw(){
 	return "grade Too High";
 }
 
-const char * Form::GradeTooLowException::what() const _NOEXCEPT{
+const char * Form::GradeTooLowException::what() const throw(){
 	return "grade Too Low";
 }
 
@@ -51,17 +51,11 @@ void    Form::beSigned(Bureaucrat& b){
     is_signed = 1;
 }
 
-Form::Form(const Form& fr){
-    name = fr.name;
-    gradeE = fr.gradeE;
-    gradeS = fr.gradeS;
+Form::Form(const Form& fr):name(fr.name), gradeE(fr.gradeE), gradeS(fr.gradeS){
     is_signed = fr.is_signed;
 }
 
 const Form& Form::operator=(const Form& fr){
-    name = fr.name;
-    gradeE = fr.gradeE;
-    gradeS = fr.gradeS;
     is_signed = fr.is_signed;
     return *this;
 }       

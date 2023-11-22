@@ -16,13 +16,11 @@ Intern::~Intern(){
 }
 
 Form* Intern::shrub(std::string target){
-    ShrubberyCreationForm* s = new ShrubberyCreationForm(target);
-    return s;
+    return new ShrubberyCreationForm(target);
 }
 
 Form* Intern::pres(std::string target){
-    PresidentialPardonForm* p = new PresidentialPardonForm(target);
-    return p;
+    return new PresidentialPardonForm(target);
 }
 
 Form* Intern::robot(std::string target){

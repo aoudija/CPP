@@ -21,10 +21,10 @@ class Form{
 		const Form& operator=(const Form& fr);
 		virtual ~Form();
 		class GradeTooHighException:public std::exception{
-			const char* what() const _NOEXCEPT;
+			const char* what() const throw();
 		};
 		class GradeTooLowException:public std::exception{
-			const char* what() const _NOEXCEPT;
+			const char* what() const throw();
 		};
 		std::string	get_formname() const;
 		bool	get_sign() const;

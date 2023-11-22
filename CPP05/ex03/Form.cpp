@@ -12,11 +12,11 @@ Form::~Form(){
 }
 
 
-const char * Form::GradeTooHighException::what() const _NOEXCEPT{
+const char * Form::GradeTooHighException::what() const throw(){
 	return "grade Too High";
 }
 
-const char * Form::GradeTooLowException::what() const _NOEXCEPT{
+const char * Form::GradeTooLowException::what() const throw(){
 	return "grade Too Low";
 }
 

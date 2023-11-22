@@ -2,7 +2,9 @@
 
 int main(){
     try{
-        Bureaucrat B("Amine", 2);
+        Bureaucrat B("Amine", 1);
+        std::cout << B << std::endl;
+        B.increment();
         std::cout << B << std::endl;
     }
     catch(std::exception & e){

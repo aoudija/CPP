@@ -3,18 +3,15 @@
 
 int main(){
     try{
-    Bureaucrat B("Amine", 100);
-    ShrubberyCreationForm f("shrubery");
-    RobotomyRequestForm R(  "robo");
-
-
-    B.signForm(R);
-    // B.executeForm(R);
-        B.signForm(f);
-        B.executeForm(f);
+        Bureaucrat b = Bureaucrat("Amine", 40);
+        // AForm* f = new RobotomyRequestForm("FORMrobot");
+        AForm* f = new ShrubberyCreationForm("home");
+        // AForm* f = new PresidentialPardonForm("pardon");
+        b.signForm(*f);
+        b.executeForm(*f);
+        delete f;
     }
     catch(std::exception& e){
         std::cout << e.what() << std::endl;
-        std::cout << "form not executed" << std::endl;
     }
 }

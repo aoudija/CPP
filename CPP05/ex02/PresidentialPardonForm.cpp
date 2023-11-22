@@ -11,7 +11,7 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm& sh)
 }
 
 const PresidentialPardonForm& PresidentialPardonForm::operator=(const PresidentialPardonForm& sh){
-    (void)sh;
+    target = sh.target;
     return *this;
 }
 

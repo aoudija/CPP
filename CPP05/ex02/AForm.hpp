@@ -16,15 +16,15 @@ class AForm{
 	const int gradeE;
 	public:
 		AForm();
-		AForm(std::string n, int gs, int ge);
 		AForm(const AForm& fr);
 		const AForm& operator=(const AForm& fr);
-		~AForm();
+		virtual ~AForm();
+		AForm(std::string n, int gs, int ge);
 		class GradeTooHighException:public std::exception{
-			const char* what() const _NOEXCEPT;
+			const char* what() const throw();
 		};
 		class GradeTooLowException:public std::exception{
-			const char* what() const _NOEXCEPT;
+			const char* what() const throw();
 		};
 		std::string	get_formname() const;
 		bool	get_sign() const;

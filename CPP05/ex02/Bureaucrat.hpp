@@ -6,7 +6,7 @@
 class AForm;
 
 class Bureaucrat{
-    std::string name;
+    const std::string name;
     int			grade;
 	public:
 		Bureaucrat();
@@ -17,13 +17,13 @@ class Bureaucrat{
 		int			get_grade() const;
 		Bureaucrat(std::string Name, int Grade);
 		class GradeTooHighException:public std::exception{
-			const char* what() const _NOEXCEPT;
+			const char* what() const throw();
 		};
 		class GradeTooLowException:public std::exception{
-			const char* what() const _NOEXCEPT;
+			const char* what() const throw();
 		};
 		class FormNotSignedExecption:public std::exception{
-			const char* what() const _NOEXCEPT;
+			const char* what() const throw();
 		};
 		void	increment();
 		void	decrement();

@@ -1,35 +1,34 @@
 #include "Bureaucrat.hpp"
 
-Bureaucrat::Bureaucrat(){
+Bureaucrat::Bureaucrat():name("empty"){
+	grade = 100;
 }
 
 Bureaucrat::~Bureaucrat(){
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& bt){
-	*this = bt;
+Bureaucrat::Bureaucrat(const Bureaucrat& bt):name(bt.name){
+	grade = bt.grade;
 }
 
 const Bureaucrat& Bureaucrat::operator=(const Bureaucrat& bt){
-	name = bt.name;
 	grade = bt.grade;
 	return *this;
 }
 
 std::string Bureaucrat::get_name() const{
-	if (name.empty())
-		return "";
 	return name;
 }
+
 int		Bureaucrat::get_grade() const{
 	return grade;
 }
 
-const char * Bureaucrat::GradeTooHighException::what() const _NOEXCEPT{
+const char * Bureaucrat::GradeTooHighException::what() const throw(){
 	return "grade Too High";
 }
 
-const char * Bureaucrat::GradeTooLowException::what() const _NOEXCEPT{
+const char * Bureaucrat::GradeTooLowException::what() const throw(){
 	return "grade Too Low";
 }
 
