@@ -1,6 +1,8 @@
-#include "C.hpp"
+#include "Base.hpp"
 
 int main(){
-    Base *p = new B;
-    p->identify(p);
+    Base *p = generate();
+    Base& pref = *p;
+    identify(p);
+    identify(pref);
 }

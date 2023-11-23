@@ -36,18 +36,9 @@ bool	is_all_number(std::string l){
 	return 1;
 }
 
-//DONT FORGET TO CHECK FIND IT RETURNS INDEX SO MAYBE YOU NEED TO ADD 1 OR SUBSTRACT 1
 int	type_checker(std::string l){
 	size_t	len = l.length();
 	size_t	fpidx = l.find('.');
-	// std::cout << "\n------------\n";
-	// std::cout << l.substr(1, fpidx - 1) << std::endl;
-	// std::cout << l.substr(0, fpidx) << std::endl;
-	// std::cout << "len: "<< len << std::endl;
-	// std::cout << "fpidx: "<< fpidx << std::endl;
-	// std::cout << len - fpidx;
-	// std::cout << "\n------------\n";
-	// exit(0);
 	if (l.length() == 1 && !isnumber(l[0]))			        		//'c'
 		return 1;
 	else if (count_char(l, '.') == 1								//negative double
@@ -75,7 +66,7 @@ int	type_checker(std::string l){
 		return 44;
 	else if (is_all_number(l))										//integer
 		return 4;
-	else                                //take a look here!!					//not_sure_yet
+	else
 		return 55;
 	return 0;
 }
@@ -119,7 +110,7 @@ float	float_check(std::string l){
 
 	if (type == 1)
 		return static_cast<float>(l[0]);
-	return atof(l.c_str());
+	return static_cast<float>(atof(l.c_str()));
 }
 
 void	for_fun_n_science(std::string l){
