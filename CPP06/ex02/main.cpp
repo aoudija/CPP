@@ -5,4 +5,5 @@ int main(){
     Base& pref = *p;
     identify(p);
     identify(pref);
+    delete p;
 }

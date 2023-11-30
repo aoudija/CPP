@@ -138,17 +138,17 @@ void	check_limits(std::string l){
 	if (atof(l.c_str()) < INT_MIN){
 		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;
-		std::cout << "float: " << std::fixed << std::setprecision(2)
-			<< atof(l.c_str()) << 'f'<< std::endl;
-		std::cout << "double: " << std::fixed << std::setprecision(2)
+		std::cout << "float: " << std::fixed << std::setprecision(1)
+			<< static_cast<float>(atof(l.c_str())) << 'f'<< std::endl;
+		std::cout << "double: " << std::fixed << std::setprecision(1)
 			<< atof(l.c_str()) << std::endl;exit(0);
 	}
 	if (atof(l.c_str()) > INT_MAX){
 		std::cout << "char: impossible" << std::endl;
 		std::cout << "int: impossible" << std::endl;
-		std::cout << "float: " << std::fixed << std::setprecision(2)
-			<< atof(l.c_str()) << 'f'<< std::endl;
-		std::cout << "double: " << std::fixed << std::setprecision(2)
+		std::cout << "float: " << std::fixed << std::setprecision(1)
+			<< static_cast<float>(atof(l.c_str())) << 'f'<< std::endl;
+		std::cout << "double: " << std::fixed << std::setprecision(1)
 			<< atof(l.c_str()) << std::endl;exit(0);
 	}
 }
@@ -166,6 +166,6 @@ void ScalarConverter::convert(std::string l){
 	else
 		std::cout << "char: '" << char_check(l) << "'" << std::endl;
 	std::cout << "int: " << int_check(l) << std::endl;
-	std::cout << "float: " << std::fixed << std::setprecision(2) << float_check(l) << 'f' << std::endl;
-	std::cout << "double: " << std::fixed << std::setprecision(2) << double_check(l) << std::endl;
+	std::cout << "float: " << std::fixed << std::setprecision(1) << float_check(l) << 'f' << std::endl;
+	std::cout << "double: " << std::fixed << std::setprecision(1) << double_check(l) << std::endl;
 }
