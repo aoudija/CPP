@@ -11,6 +11,8 @@ void	f(R& value){
 
 template<typename T, typename R>
 void	iter(T* array, size_t N, void (*f)(R&)){
+	if (!array)/*forgot this shit*/
+		return ;
 	for (size_t i = 0; i < N; i++){
 		(*f)(array[i]);
     }
