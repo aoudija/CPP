@@ -24,6 +24,7 @@ class Span {
         int shortestSpan();
         int longestSpan();
         void printSpan();
+        void fillSpan(int* tab, unsigned int size);
 };
 
 #endif

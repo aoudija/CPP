@@ -35,18 +35,17 @@ void Span::addNumber(int n){
 }
 
 int Span::shortestSpan(){
-	vector<int>::iterator small;
-	int n1,n2;
 	if (vec.empty() || vec.size() == 1)
 		throw "Span is empty/size==1";
-	printSpan();
+	vector<int>::iterator small;
+	int n1,n2;
+
 	small = std::min_element(vec.begin(), vec.end());
 	n1 = *small;
 	vec.erase(small);
 	small = std::min_element(vec.begin(), vec.end());
 	n2 = *small;
 	vec.push_back(n1);
-	printSpan();
 	return n2 - n1;
 }
 //std::sort
@@ -65,4 +64,11 @@ void Span::printSpan(){
 	vector<int>::iterator it;
 	for(it = vec.begin(); it < vec.end(); it++)
 		cout << *it << endl;
+}
+
+void	Span::fillSpan(int* tab, unsigned int size){
+	vector<int> v;
+	for (int i = 0;i < (int)size;i++)
+		v.push_back(tab[i]);
+	vec.insert(vec.end(), v.begin(), v.end());
 }
