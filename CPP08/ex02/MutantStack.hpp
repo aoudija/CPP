@@ -5,7 +5,6 @@
 #include <string>
 #include <stack>
 #include <deque>
-#include <iterator>
 
 using std::cout;
 using std::endl;
@@ -31,6 +30,7 @@ class MutantStack:public stack<T, cntr>{
                 tempstack.pop();
             }
         }
+        typedef int h;
         typedef typename cntr::iterator iterator;
         iterator begin(){
             return this->c.begin();

@@ -67,8 +67,10 @@ void Span::printSpan(){
 }
 
 void	Span::fillSpan(int* tab, unsigned int size){
-	vector<int> v;
-	for (int i = 0;i < (int)size;i++)
-		v.push_back(tab[i]);
+	vector<int> v(tab, tab + sizeof(tab)/4);
 	vec.insert(vec.end(), v.begin(), v.end());
+	// vector<int> v;
+	// for (int i = 0;i < (int)size;i++)
+	// 	v.push_back(tab[i]);
+	// vec.insert(vec.end(), v.begin(), v.end());
 }

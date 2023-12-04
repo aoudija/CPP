@@ -4,20 +4,16 @@
 #include <iostream>
 #include <string>
 #include <iterator>
+#include <algorithm>
 
 using std::cout;
 using std::endl;
+using std::iterator;
 
 template <typename T>
 void easyfind(T container, int n){
-    int i = 0;
-
-    while (container[i]){
-        if (container[i] == n){
-            cout << "I found your number " << n << endl;
-            return ;
-        }
-        i++;
+    if (std::find(container.begin(), container.end(), n) != container.end()){
+        cout << "I found your number" << endl;return ;
     }
     throw "Number not found";
 }
