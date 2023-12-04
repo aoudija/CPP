@@ -30,8 +30,8 @@ int main()
     mstack.push(737);
     //[...]
     mstack.push(0);
-    MutantStack<int>::iterator it = mstack.begin();
-    MutantStack<int>::iterator ite = mstack.end();
+    MutantStack<int, std::vector<int> >::iterator it = mstack.begin();
+    MutantStack<int, std::vector<int> >::iterator ite = mstack.end();
     ++it;
     --it;
     while (it != ite)
