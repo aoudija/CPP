@@ -12,10 +12,10 @@ int main(){
 
     try {
         if (!vec.empty())
-            easyfind(vec, 6);
+            easyfind(vec, 0);
     }
-    catch(const char* a){
-        cout << a << endl;
+    catch(std::exception& e){
+        cout << e.what() << endl;
     }
 }
 

@@ -5,6 +5,7 @@
 #include <string>
 #include <vector>
 #include <iterator>
+#include <algorithm>
 
 using std::cout;
 using std::endl;

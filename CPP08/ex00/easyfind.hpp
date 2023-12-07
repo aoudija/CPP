@@ -8,14 +8,14 @@
 
 using std::cout;
 using std::endl;
-using std::iterator;
 
 template <typename T>
 void easyfind(T container, int n){
     if (std::find(container.begin(), container.end(), n) != container.end()){
-        cout << "I found your number" << endl;return ;
+        cout << "I found your number" << endl;
+        return ;
     }
-    throw "Number not found";
+    throw std::runtime_error("Number not found");
 }
 
 #endif
