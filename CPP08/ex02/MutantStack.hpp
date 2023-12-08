@@ -9,12 +9,11 @@
 using std::cout;
 using std::endl;
 using std::stack;
-using std::deque;
 
-template<typename T, typename cntr = deque<T> >
-class MutantStack:public stack<T, cntr>{
+template<typename T>
+class MutantStack:public stack<T>{
     public:
-        MutantStack():stack<T,cntr>(){}
+        MutantStack():stack<T>(){}
         MutantStack(const MutantStack& ms){
             this->c = ms.c;
         }
@@ -23,14 +22,7 @@ class MutantStack:public stack<T, cntr>{
             return *this;
         }
         ~MutantStack(){}
-        void printstack(){
-            stack<T,cntr> tempstack = *this;
-            while (!tempstack.empty()){
-                cout << tempstack.top() << endl;
-                tempstack.pop();
-            }
-        }
-        typedef typename cntr::iterator iterator;
+        typedef typename std::deque<T>::iterator iterator;
         iterator begin(){
             return this->c.begin();
         }

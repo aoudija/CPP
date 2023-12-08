@@ -7,7 +7,12 @@
 #include <iterator>
 using std::vector;
 
+void f(){
+    system("> l");
+}
+
 int main(){
+    atexit(f);
     MutantStack<int> mystack;
     mystack.push(7);
     mystack.push(1);
@@ -18,9 +23,20 @@ int main(){
     }
 }
 
+// int main(){
+//     vector<int> mystack;
+//     mystack.push_back(7);
+//     mystack.push_back(1);
+//     mystack.push_back(1902);
+//     vector<int>::iterator it;
+//     for (it = mystack.begin();it < mystack.end();it++){
+//         cout << *it << endl;
+//     }
+// }
+
 // int main()
 // {
-// MutantStack<int, vector<int> > mstack;
+// MutantStack<int> mstack;
 // mstack.push(5);
 // mstack.push(17);
 // std::cout << mstack.top() << std::endl;
@@ -31,8 +47,8 @@ int main(){
 // mstack.push(737);
 // //[...]
 // mstack.push(0);
-// MutantStack<int, vector<int> >::iterator it = mstack.begin();
-// MutantStack<int, vector<int> >::iterator ite = mstack.end();
+// MutantStack<int>::iterator it = mstack.begin();
+// MutantStack<int>::iterator ite = mstack.end();
 // ++it;
 // --it;
 // while (it != ite)
@@ -40,6 +56,6 @@ int main(){
 // std::cout << *it << std::endl;
 // ++it;
 // }
-// std::stack<int, vector<int> > s(mstack);
+// std::stack<int> s(mstack);
 // return 0;
 // }

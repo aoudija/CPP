@@ -18,7 +18,7 @@ class Span {
     public:
         Span();
         ~Span();
-        Span(Span& obj);
+        Span(const Span& obj);
         Span& operator=(const Span& obj);
         Span(unsigned int N);
         void addNumber(int n);

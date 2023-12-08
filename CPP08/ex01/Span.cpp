@@ -10,15 +10,14 @@ Span::Span() {
     stored = 0;
 }
 
-Span::Span(Span& obj){
+Span::Span(const Span& obj){
 	*this = obj;
 }
 
 Span& Span::operator=(const Span& obj){
 	N = obj.N;
 	stored = obj.stored;
-	for (int i = 0; i <= stored;i++)
-		vec.push_back(obj.vec[i]);
+	vec = obj.vec;
 	return *this;
 }
 
@@ -33,7 +32,7 @@ void Span::addNumber(int n){
 		stored++;
 		return ;
 	}
-	throw "Span is full";
+	throw std::runtime_error("Span is full");
 }
 
 int Span::shortestSpan(){
@@ -53,7 +52,7 @@ int Span::shortestSpan(){
 
 int Span::longestSpan(){
 	if (vec.empty() || vec.size() == 1)
-		throw "Span is empty/size==1";
+		throw std::runtime_error("Span is empty/size==1");
 	vector<int>::iterator big = std::max_element(vec.begin()
 		, vec.end());
 	vector<int>::iterator small = std::min_element(vec.begin()
