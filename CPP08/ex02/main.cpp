@@ -7,12 +7,8 @@
 #include <iterator>
 using std::vector;
 
-void f(){
-    system("> l");
-}
 
 int main(){
-    atexit(f);
     MutantStack<int> mystack;
     mystack.push(7);
     mystack.push(1);
