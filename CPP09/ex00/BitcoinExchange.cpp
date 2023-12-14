@@ -41,7 +41,7 @@ void BitcoinExchange::calculate(string date, float value){
 
 int is_all_number(string str){
 	for(size_t i = 0;i < str.length();i++){
-		if (isalpha(str[i]))
+		if (!isdigit(str[i]))
 			return 0;
 	}
 	return 1;
