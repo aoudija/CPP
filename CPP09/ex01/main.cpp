@@ -12,6 +12,6 @@ int	main(int ac, char** av){
 		cout << "Error" << endl;
 		return 0;
 	}
-	Calculate(notation);
+	Calculate(notation); 
 }
 

@@ -33,7 +33,7 @@ BitcoinExchange::~BitcoinExchange(){
 void BitcoinExchange::calculate(string date, float value){
     std::map<string, float>::iterator it;
     it = data.lower_bound(date);
-    if (it->first != date && it->first != "2009-01-02")
+	if (it->first != date && it->first != "2009-01-02")
 		it--;
     cout << date + " => " << value << " = "
       << it->second * value << endl;
@@ -89,7 +89,7 @@ int	check_value(string value){
 	}
 	return num;
 }
-//Reminder: test pointer to getline buffer--> &buffer[0];
+
 int parse_input(char* av, BitcoinExchange& BE){
 	float num;
 	std::map<string,int>::iterator it;
