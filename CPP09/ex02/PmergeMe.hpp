@@ -16,14 +16,8 @@ using std::string;
 using std::vector;
 using std::make_pair;
 
-int is_all_digit(char* av){
-	int i = -1;
-	while (av[++i]){
-		if (!isdigit(av[i]))
-			return 0;
-	}
-	return 1;
-}
+int is_all_digit(char* av);
+bool comparePairs(const std::pair<int, int>& a, const std::pair<int, int>& b);
 
 template<typename T>
 int Error_Checker(char** av, T& obj){
@@ -50,9 +44,6 @@ int Error_Checker(char** av, T& obj){
     return 1;
 }
 
-bool comparePairs(const std::pair<int, int>& a, const std::pair<int, int>& b) {
-	return a.second < b.second;
-}
 template<typename T, typename T2>
 class PmergeMe{
 	T2	pairs;
@@ -156,6 +147,5 @@ class PmergeMe{
 			cout << endl;
 		}
 };
-
 
 #endif

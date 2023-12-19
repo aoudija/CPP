@@ -11,9 +11,9 @@ BitcoinExchange::BitcoinExchange(){
     if (file.is_open()){
         std::getline(file, buffer);
         while (std::getline(file, buffer)){
-            std::istringstream iss(buffer.substr(11));
-	        iss >> temp;
-            data[buffer.substr(0, 10)] = temp;
+			std::istringstream iss(buffer.substr(11));
+			iss >> temp;
+			data[buffer.substr(0, 10)] = temp;
         }
     }
 }
@@ -62,9 +62,9 @@ int check_date(string date){
 	iss >> month;
 	iss2 >> day;
 
-	if (month < 0 || month > 12)
+	if (month <= 0 || month > 12)
 		return 0;
-	if (day > 31 || day < 0)
+	if (day > 31 || day <= 0)
 		return 0;
 	if (month == 2 && (day > 29 || day < 0))
 		return 0;
@@ -87,7 +87,7 @@ int	check_value(string value){
 		cout << "Error: too large number." << endl;
 		return 0;
 	}
-	return num;
+	return 1;
 }
 
 int parse_input(char* av, BitcoinExchange& BE){
@@ -107,7 +107,7 @@ int parse_input(char* av, BitcoinExchange& BE){
 				|| !check_date(buffer.substr(0, 10)))
 				cout << "Error: bad input => " << buffer << endl;
 			else if (check_value(buffer.substr(13))){
-				std::istringstream iss(buffer.substr(13, 1));
+				std::istringstream iss(buffer.substr(13));
 				iss >> num;
 				BE.calculate(buffer.substr(0, 10), num);
 			}
